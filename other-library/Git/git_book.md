@@ -2,7 +2,7 @@
 
 > Author: tinfengyee
 > Date: 2022-08-07 13:15:49
-> LastEditTime: 2022-08-07 17:45:43
+> LastEditTime: 2022-08-07 19:27:09
 > Description: NO Desc
 
 # 1. 集中式和分布式
@@ -128,8 +128,6 @@ git init
 $ git commit --amend -m [message]
 ```
 
-
-
 ## 4.4. 删除操作
 
 ### 4.4.1. 已经添加到仓库，删除
@@ -145,7 +143,19 @@ $ git commit --amend -m [message]
 
 `git rm --cached 文件名`：如果文件被修改（新增，修改内容）了，只添加到暂存区，我们想从暂存区中删掉这个文件，那么可以使用`--cached`参数，这个参数不会把硬盘中的文件删掉，只会从暂存区和仓库中删掉，让这个文件处于`Untracked files`状态。
 
-## 4.5. 重命名文件
+## 4.5. 删除git库中untracked files（未监控）的文件/目录
+
+```
+git clean -f
+git clean -fd
+
+在用上述 git clean 前，强烈建议加上 -n 参数来先看看会删掉哪些文件，防止重要文件被误删
+git clean -nxfd
+git clean -nf
+git clean -nfd
+```
+
+## 4.6. 重命名文件
 
 ```
 git mv abc.txt 111.txt
@@ -156,7 +166,7 @@ git mv abc.txt 111.txt
 1. 在文件夹中重命名文件：`mv abc.txt 111.txt`。
 2. 执行`git add 111.txt`。
 
-## 4.6. 撤销操作
+## 4.7. 撤销操作
 
 一般使用这个就可以了
 
@@ -164,17 +174,17 @@ git mv abc.txt 111.txt
 git restore [--staged] . 
 ```
 
-## 4.7. 查看当前状态
+## 4.8. 查看当前状态
 
 使用`git status`可以查看当前暂存区的状态。
 
-## 4.8. 查看版本
+## 4.9. 查看版本
 
 ```
 git log --oneline --graph
 ```
 
-## 4.9. 版本回退
+## 4.10. 版本回退
 
 使用`git reset`命令，他有三个参数
 
@@ -192,7 +202,7 @@ git reset --hard HEAD~1 / HEAD^
 
 如果版本回退了，然后又想回退到之前的版本，那么可以用`git reflog`查看`HEAD`指针移动的过程，可以找到对应的`commit`，进行版本回退。
 
-## 4.10. .gitignore 忽略文件
+## 4.11. .gitignore 忽略文件
 
 文件 `.gitignore` 的格式规范如下：
 
@@ -360,6 +370,7 @@ git fetch –all -p
 
 ```bash
 git branch <branch>        # 创建分支
+git checkout/switch --orphan <branch> # 创建空分支 git rm -rf .
 git checkout  <branch>        # 切换分支
 git checkout -b <branch>        # 创建并切换分支
 git switch -c <branch>        # 创建并切换分支
