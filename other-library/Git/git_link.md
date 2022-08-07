@@ -2,12 +2,14 @@
 
 > Author: tinfengyee
 > Date: 2022-08-06 19:31:34
-> LastEditTime: 2022-08-07 01:25:08
+> LastEditTime: 2022-08-07 20:06:58
 > Description: NO Desc
 
 # Git 资源参考
 
 - [https://git-scm.com/docs](https://git-scm.com/docs)
+
+- [开始使用 Git](https://docs.github.com/cn/get-started/getting-started-with-git)
 
 - [Git 中文参考](https://www.bookstack.cn/read/git-doc-zh/README.md)
 - [Git Community Book 中文版](http://static.kancloud.cn/thinkphp/git-community-book)
@@ -15,6 +17,11 @@
 - [Git 使用规范流程](https://www.ruanyifeng.com/blog/2015/08/git-use-process.html)
 - [阮一峰 Git 教程](https://www.bookstack.cn/read/git-tutorial/README.md)
 - [Git超详解（看不懂算我输）](https://blog.csdn.net/weixin_44154094/article/details/114338173)
+
+# Git 资源参考二
+
+- [git rebase在项目中的使用 进阶版](https://blog.csdn.net/ploter/article/details/117570775)
+- [Git 不要只会 pull 和 push，学学这 5 条提高效率的命令](https://juejin.cn/post/7108602508888506382)
 
 # Unsafe repository
 
