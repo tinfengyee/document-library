@@ -1,5 +1,12 @@
 # Windows <!-- omit in toc -->
 
+# Windows 资源
+
+- [Windows疑难解答](https://docs.microsoft.com/zh-cn/troubleshoot/windows/)
+- [面向高级用户的 Windows 注册表信息](https://docs.microsoft.com/zh-cn/troubleshoot/windows-server/performance/windows-registry-advanced-users)
+- [Windows Script Host](https://docs.microsoft.com/zh-cn/previous-versions//2x3w20xf(v=vs.85))
+- [Windows注册表基础：REG文件详解](https://searchcio.techtarget.com.cn/8-25567/)
+
 # windows store安装
 
 ```
