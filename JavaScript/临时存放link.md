@@ -13,3 +13,7 @@
 
 [前端面试复盘专题](https://juejin.cn/post/6952491054100807694)
 [jsliang 求职系列 - 49 - 2020 求职系列汇总【完结】](https://juejin.cn/post/6908493793213808647)
+
+
+
+[如何简单理解闭包（Closure）](https://juejin.cn/post/6977648266695409672)
