@@ -220,32 +220,6 @@ defineEmits(['update:firstName', 'update:lastName'])
 
 组件的 `v-model` 上所添加的修饰符，可以通过 `modelModifiers` prop 在组件内访问到。在下面的组件中，我们声明了 `modelModifiers` 这个 prop，它的默认值是一个空对象：
 
-
-
-
-
- 
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
 ```
 <script setup>
 const props = defineProps({
@@ -270,34 +244,6 @@ console.log(props.modelModifiers) // { capitalize: true }
 注意这里组件的 `modelModifiers` prop 包含了 `capitalize` 且其值为 `true`，因为它在模板中的 `v-model` 绑定上被使用了。
 
 有了 `modelModifiers` 这个 prop，我们就可以在原生事件侦听函数中检查它的值，然后决定触发的自定义事件中要向父组件传递什么值。在下面的代码里，我们就是在每次 `<input>` 元素触发 `input` 事件时将值的首字母大写：
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
- 
-
- 
-
-
-
-
-
-
-
-
-
-
 
 ```
 <script setup>

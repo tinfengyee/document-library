@@ -11,9 +11,6 @@ https://blog.csdn.net/qq_59474517?type=blog
 # [历时一个月，2.6W字！50+Vue经典面试题源码级详解，你值得收藏！](https://juejin.cn/post/7097067108663558151)
 
 
-
-
-
 必看-三十七个常见Vue面试题，背就完事了。
 
 [3分钟了解vue数据劫持的原理](https://juejin.cn/post/6844903833995313165)
@@ -21,7 +18,6 @@ https://blog.csdn.net/qq_59474517?type=blog
 https://juejin.cn/post/7043074656047202334
 
 ![image-20220813180832693](img/image-20220813180832693.png)
-
 
 
 30 道 Vue 面试题，内含详细讲解（涵盖入门到精通，自测 Vue 掌握程度）

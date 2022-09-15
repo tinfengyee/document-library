@@ -1,12 +1,4 @@
-# Vue3 vs Vue2
 
-https://juejin.cn/post/7019687950166261796
-
-# Vue3.0 VS Vue2.0生命周期
-
-https://juejin.cn/post/7019692533240299550
-
-https://www.cnblogs.com/qingheshiguang/p/14677198.html
 
 # vue3.0中shallowRef和shallReactive
 
