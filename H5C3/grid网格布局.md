@@ -2,7 +2,7 @@
 
 > Author: tinfengyee
 > Date: 2022-09-16 18:31:31
-> LastEditTime: 2022-09-17 13:24:06
+> LastEditTime: 2022-09-17 15:42:03
 > Description: NO Desc
 
 > [CSS Grid 网格布局教程](https://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html)
@@ -631,3 +631,98 @@ place-self: center center;
 ```
 
 如果省略第二个值，`place-self`属性会认为这两个值相等。
+
+# 3. Grid 实战——实现响应式布局
+
+## 3.1. fr 实现等分响应式
+
+[fr 实现等分响应式](https://codepen.io/gpingfeng/pen/wvMZKpB?editors=1100)
+
+`fr` 等分单位，可以将容器的可用空间分成想要的多个等分空间。利用这个特性，我们能够轻易实现一个等分响应式。`grid-template-columns: 1fr 1fr 1fr` 表示容器分为三等分
+
+```css
+.wrapper {
+  margin: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px 20px;
+  grid-auto-rows: 50px;
+}
+```
+
+![image](img/17389592bf7e44ddtplv-t2oaga2asx-zoom-in-crop-mark4536000.webp)
+
+## 3.2. repeat + auto-fit——固定列宽，改变列数量
+
+等分布局并不只有 `Grid` 布局才有，像 `flex` 布局也能轻松实现，接下来看看更高级的响应式
+
+上面例子的始终都是三列的，但是需求往往希望我们的网格能够固定列宽，并根据容器的宽度来改变列的数量。这个时候，我们可以用到上面提到 `repeat()` 函数以及 `auto-fit` 关键字。`grid-template-columns: repeat(auto-fit, 200px)` 表示固定列宽为 200px，数量是自适应的，只要容纳得下，就会往上排列，代码以及效果实现如下：
+[演示地址](https://codepen.io/gpingfeng/pen/eYJopVE?editors=1100)
+
+```css
+.wrapper {
+  margin: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 200px);
+  grid-gap: 10px 20px;
+  grid-auto-rows: 50px;
+}
+```
+
+![image](img/17389592c297495atplv-t2oaga2asx-zoom-in-crop-mark4536000.webp)
+
+## 3.3. repeat+auto-fit+minmax 去掉右侧空白
+
+上面看到的效果中，右侧通常会留下空白，这是我们不希望看到的。如果列的宽度也能在某个范围内自适应就好了。`minmax()` 函数就帮助我们做到了这点。将 `grid-template-columns: repeat(auto-fit, 200px)` 改成 `grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))` 表示列宽至少 200px，如果还有空余则一起等分。代码以及效果如下所示：
+
+[演示地址](https://codepen.io/gpingfeng/pen/dyGLYdQ)
+
+```css
+.wrapper {
+  margin: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 10px 20px;
+  grid-auto-rows: 50px;
+}
+```
+
+![auto-auto-minmax.gif](img/17389592cc3c2bf9tplv-t2oaga2asx-zoom-in-crop-mark4536000.webp)
+
+## 3.4. repeat+auto-fit+minmax-span-dense 解决空缺问题
+
+似乎一切进行得很顺利，但是某天 UI 来说，每个网格元素的长度可能不相同，这也简单，通过 `span` 关键字进行设置网格项目的跨度，`grid-column-start: span 3`，表示这个网格项目跨度为 3。具体的代码与效果如下所示：
+
+```css
+.item-3 {
+  grid-column-start: span 3;
+}
+```
+
+[演示地址](https://codepen.io/gpingfeng/pen/BajEoxy?editors=1100)
+
+![image](img/17389592f9da3763tplv-t2oaga2asx-zoom-in-crop-mark4536000.webp)
+
+不对，怎么右侧又有空白了？原来是有一些长度太长了，放不下，这个时候就到我们的 `dense` 关键字出场了。`grid-auto-flow: row dense` 表示尽可能填充，而不留空白，代码以及效果如下所示：
+
+```css
+.wrapper, .wrapper-1 {
+  margin: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 10px 20px;
+  grid-auto-rows: 50px;
+}
+
+.wrapper-1 {
+  grid-auto-flow: row dense;
+}
+```
+
+![image](img/17389593009f7fe7tplv-t2oaga2asx-zoom-in-crop-mark4536000.webp)
+
+# 4. Grid 布局兼容性
+
+最后，聊聊 `Grid` 布局兼容性问题，在 [caniuse](https://link.juejin.cn/?target=https%3A%2F%2Fcaniuse.com%2F%23search%3Dgrid) 中，我们可以看到的结果如下，总体兼容性还不错，但在 IE 10 以下不支持。个人建议在公司的内部系统运用起来是没有问题的，但 TOC 的话，可能目前还是不太合适
+
+![image](img/17389592fa541366tplv-t2oaga2asx-zoom-in-crop-mark4536000.webp)
