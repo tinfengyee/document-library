@@ -69,6 +69,14 @@ ID: yzhang.markdown-all-in-one
 名称: Markdown Preview Github Styling
 ID: bierner.markdown-preview-github-styles
 
+名称: Path Intellisense
+ID: christian-kohler.path-intellisense
+--
+  "path-intellisense.mappings": {
+    "/@/": "${workspaceRoot}/src"
+  },
+--
+
 名称: Renamer 文件批量重命名工具
 ID: zdldove.renamer
 
@@ -158,3 +166,10 @@ Windows : ⌃ ctrl + D
 
 ```
 
+# 7. 使用技巧
+
+## 使用内置浏览器
+
+HTML使用 Live Preview 插件。
+
+Vue等框架使用命令，run the `Simple Browser: Show` command that is already built-in with VS Code.

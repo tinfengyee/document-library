@@ -159,3 +159,7 @@ EOL (End of line)
 
 # [Expected linebreaks to be 'LF' but found 'CRLF' linebreak-style](https://stackoverflow.com/questions/37826449/expected-linebreaks-to-be-lf-but-found-crlf-linebreak-style)
 
+```
+npm i eslint-plugin-vue@latest @typescript-eslint/eslint-plugin@latest @typescript-eslint/parser@latest -D
+```
+
