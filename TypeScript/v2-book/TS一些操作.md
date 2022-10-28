@@ -10,4 +10,14 @@ const angle = Math.atan2(...args);
 
 const req = { url: "https://example.com", method: "GET" } as const;
 handleRequest(req.url, req.method);
+
+const routeLinks = ['/', 'about', 'router'] as const
+  function jumpLink(link: typeof routeLinks[number]) {
+    console.log(link)
+
+    router.push({
+      path: link,
+    })
+  }
 ```
+

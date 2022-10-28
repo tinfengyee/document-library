@@ -19,6 +19,16 @@
 
 #  2. 安装配置
 
+[**Generating a new SSH key**：](https://docs.github.com/cn/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+
+```bash
+ssh-keygen -t ed25519 -C "tinfengyee@163.com"
+
+# Note: If you are using a legacy system that doesn't support the Ed25519 algorithm, use:
+
+ssh-keygen -t rsa -b 4096 -C "tinfengyee@163.com"
+```
+
 **配置：**
 1.系统级别：`git config --system` 配置选项 (`%git安装路径%/etc/gitconfig`)
 2.用户级别：`git config --global` 配置选项 (`\$USER\.gitconfig`。)

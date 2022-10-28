@@ -1331,6 +1331,7 @@ Vue.component('child-com', {
   
   
 });
+
 Vue.component('anchored-heading', {
   render() {
     const scopedSlots = {

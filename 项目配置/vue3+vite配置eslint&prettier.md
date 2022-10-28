@@ -468,6 +468,8 @@ public/*
 
 # 集成 husky + lint-staged
 
+[使用vite脚手架创建vue3项目配置eslint+stylelint](https://segmentfault.com/a/1190000041844480)
+
 # 集成 VSCode
 
 ## 配置工作区 `settings.json`
@@ -574,6 +576,7 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
   - `@typescript-eslint/eslint-plugin` : ESLint插件，包含了各类定义好的检测Typescript代码的规范 
 - [@vue/eslint-config-typescript ](https://github.com/vuejs/eslint-config-typescript) : 用于 Vue 的 `eslint-config-typescript`。可用规则，请参阅[@typescript-eslint/eslint-plugin](https://typescript-eslint.io/rules/)。
 - [@vue/eslint-config-prettier](https://github.com/vuejs/eslint-config-prettier) : 用于 Vue 的 `eslint-config-prettier`
+- [https://stylelint.io/](https://stylelint.io/)
 
 # 参考文章
 
