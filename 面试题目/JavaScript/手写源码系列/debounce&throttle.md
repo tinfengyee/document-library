@@ -553,12 +553,12 @@ var helpers = {
 
 # 8. 参考
 
-- [函数消抖与节流](https://schacker.github.io/2018/06/24/%E5%87%BD%E6%95%B0%E6%B6%88%E6%8A%96%E4%B8%8E%E8%8A%82%E6%B5%81/)[推荐]
+- [x] [函数消抖与节流](https://schacker.github.io/2018/06/24/%E5%87%BD%E6%95%B0%E6%B6%88%E6%8A%96%E4%B8%8E%E8%8A%82%E6%B5%81/)
 
-- [JS节流和防抖函数的理解和实现](https://blog.csdn.net/tinfengyee/article/details/105429619)
-- [深入浅出节流函数 throttle](https://muyiy.cn/blog/7/7.1.html)
-- [7分钟理解JS的节流、防抖及使用场景](https://juejin.cn/post/6844903669389885453)
-- [JavaScript专题之跟着 underscore 学节流 #26](https://github.com/mqyqingfeng/Blog/issues/26)
-- [Js中的防抖与节流](https://hateonion.me/posts/19jan02/)
-- [浅出篇 7 个角度吃透 Lodash 防抖节流原理](https://muyiy.cn/blog/7/7.5.html#%E5%BC%95%E8%A8%80)
-- [函数防抖(debounce)和节流(throttle)以及lodash的debounce源码赏析](https://segmentfault.com/a/1190000017227559)
+- [ ] [JS节流和防抖函数的理解和实现](https://blog.csdn.net/tinfengyee/article/details/105429619)
+- [ ] [深入浅出节流函数 throttle](https://muyiy.cn/blog/7/7.1.html)
+- [ ] [7分钟理解JS的节流、防抖及使用场景](https://juejin.cn/post/6844903669389885453)
+- [ ] [JavaScript专题之跟着 underscore 学节流 #26](https://github.com/mqyqingfeng/Blog/issues/26)
+- [ ] [Js中的防抖与节流](https://hateonion.me/posts/19jan02/)
+- [ ] [浅出篇 7 个角度吃透 Lodash 防抖节流原理](https://muyiy.cn/blog/7/7.5.html#%E5%BC%95%E8%A8%80)
+- [ ] [函数防抖(debounce)和节流(throttle)以及lodash的debounce源码赏析](https://segmentfault.com/a/1190000017227559)

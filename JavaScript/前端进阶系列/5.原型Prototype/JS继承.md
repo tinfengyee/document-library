@@ -85,8 +85,6 @@ if (typeof Object.create !== 'function') {
 }
 ```
 
-
-
 ## 参考
 
 [详解JS原型链与继承](http://louiszhai.github.io/2015/12/15/prototypeChain/)
