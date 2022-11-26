@@ -2,10 +2,10 @@
 
 > Author: tinfengyee
 > Date: 2022-11-16 21:52:57
-> LastEditTime: 2022-11-16 21:53:08
+> LastEditTime: 2022-11-23 20:50:31
 > Description: NO Desc
 
-## 前言
+## 1. 前言
 
 先记住 1 句话：
 
@@ -28,7 +28,7 @@
 
 > 注意这里是浏览器中的 `this`，和 Node 中的 `this` 是不一样的。
 
-## 全局执行上下文中的 this
+## 2. 全局执行上下文中的 this
 
 在 Chrome 控制台中输入：`this`，你会看到答案：
 
@@ -55,13 +55,13 @@ foo();
 
 > 注意这里是非严格模式。严格模式下的全局对象是 `undefined`，那就会报错误 `Uncaught TypeError: Cannot read property 'name' of undefined`
 
-## 函数执行上下文中的 this
+## 3. 函数执行上下文中的 this
 
 在上面我们知道，一般的调用方法，是调用 `window` 上的方法。
 
 那怎么获取当前函数的 `this` 呢？
 
-### 通过 call/bind/apply 改变 this
+### 3.1. 通过 call/bind/apply 改变 this
 
 ```js
 this.myName = 'jsliang';
@@ -97,7 +97,7 @@ console.log(foo.myName); // 输出啥？
 
 当然你也可以换成 `apply` 和 `bind`，这里不做累述。
 
-### 通过对象调用方法设置
+### 3.2. 通过对象调用方法设置
 
 使用对象来调用其内部的一个方法，该方法的 `this` 是指向对象本身的。
 
@@ -188,7 +188,7 @@ foo(); // 输出啥？
 * 在全局环境中调用一个函数，函数内部的 `this` 指向的是全局变量 `window`。
 * 通过一个对象来调用其内部的一个方法，该方法的执行上下文中的 `this` 指向对象本身。
 
-### 通过构造函数中设置
+### 3.3. 通过构造函数中设置
 
 ```js
 this.name = 'jsliang';
@@ -286,9 +286,9 @@ console.log(me); // Person {name: 'jsliang'}
 
 这样，我们就知道构造函数中的 `new` 是怎么一回事了。
 
-## this 设计缺陷和应对方案
+## 4. this 设计缺陷和应对方案
 
-### 嵌套函数中的 this 不会从外层函数中继承
+### 4.1. 嵌套函数中的 this 不会从外层函数中继承
 
 ```js
 var myObj = {
@@ -346,7 +346,7 @@ myObj.showThis();
 
 这是因为 ES6 中的箭头函数并不会创建其自身的执行上下文，所以箭头函数中的 `this` 取决于它的外部函数，即谁调用它 `this` 就继承自谁。
 
-### 普通函数中 this 指向全局对象 window
+### 4.2. 普通函数中 this 指向全局对象 window
 
 在实际工作中，我们并不希望函数执行上下文中的 `this` 默认指向全局对象，因为这样会打破数据的边界，造成一些误操作。
 
@@ -354,7 +354,7 @@ myObj.showThis();
 
 这个问题可以通过设置 JavaScript 的 **严格模式** 来解决。在严格模式下，默认执行一个函数，其函数的执行上下文中的 `this` 值是 `undefined`，这就解决上面的问题了。
 
-## React 中 this 指向
+## 5. React 中 this 指向
 
 来源于：`this.handleClik = this.handleClick.bind(this);`
 
@@ -399,7 +399,7 @@ func();
 
 > 所以，为了避免矛盾冲突，小伙伴们可以跳过本章
 
-### 解决方案一：提前 bind 绑定 this
+### 5.1. 解决方案一：提前 bind 绑定 this
 
 ```js
 const test = {
@@ -422,7 +422,7 @@ constructor (props) {
 <button onClick={this.handleClick}>btn 1</button>
 ```
 
-### 解决方案二：调用时 bind 绑定 this
+### 5.2. 解决方案二：调用时 bind 绑定 this
 
 ```js
 const test = {
@@ -441,7 +441,7 @@ func();
 <button onClick={this.handleClick.bind(this)}>btn 2</button>
 ```
 
-### 解决方案三：返回一个箭头函数
+### 5.3. 解决方案三：返回一个箭头函数
 
 ```js
 const test = {
@@ -460,7 +460,7 @@ func();
 <button onClick={() => this.handleClick()}>btn 3</button>
 ```
 
-### 解决方案四：将调用方法变成箭头函数（失败）
+### 5.4. 解决方案四：将调用方法变成箭头函数（失败）
 
 ```js
 const test = {
@@ -490,7 +490,7 @@ handleClick2 = () => {
 
 当然，**jsliang** 还是想列举出来，具体结论，相信后面有机会会逐步解答内心疑惑。
 
-### React 的 this 指向实际内容
+### 5.5. React 的 this 指向实际内容
 
 ```js
 class Toggle extends React.Component {
@@ -581,7 +581,7 @@ handleClick = () => {
 
 当我们点击按钮的时候，会调用 `handleClick` 方法来处理事件，而 `handleClick` 是在 `Toggle` 方法中定义的，所以 `this` 指代 `Toggle` 这个类。
 
-### React 的 this 指向解决方案
+### 5.6. React 的 this 指向解决方案
 
 ```js
 import React, { Component } from 'react'
@@ -623,7 +623,7 @@ class App extends Component {
 export default App;
 ```
 
-## 小结
+## 6. 小结
 
 先记住 1 句话：
 
@@ -634,9 +634,9 @@ export default App;
 * 普通函数中 `this` 的指向，是 `this` **执行时**的上下文
 * 箭头函数中 `this` 的指向，是 `this` **定义时**的上下文
 
-## 题目
+## 7. 题目
 
-### this 题目解析 5 步曲
+### 7.1. this 题目解析 5 步曲
 
 * 第一题
 
@@ -747,7 +747,7 @@ fn();
 
 解析：小伙伴理解理解看看
 
-### let/const 的 this
+### 7.2. let/const 的 this
 
 ```js
 let a = 10;
@@ -770,7 +770,7 @@ console.log(window.a);
 
 解析：如果把 `var` 改成了 `let` 或者 `const`，变量是不会被绑定到 `window` 上的，所以此时会打印出三个 `undefined`。
 
-### 箭头函数的 this
+### 7.3. 箭头函数的 this
 
 ```js
 var name = 'window name';
@@ -804,7 +804,7 @@ jsliang
 
 解析：箭头函数的 `this` 指向函数定义时的 `this`，而非执行时。箭头函数中没有 `this` 绑定，必须通过查找作用域链来决定其值，如果箭头函数被非箭头函数包含，则 `this` 绑定的是最近一层非箭头函数的 `this`，否则，`this` 为 `undefined`。
 
-### 求输出结果
+### 7.4. 求输出结果
 
 ```js
 function foo () {
@@ -838,9 +838,9 @@ obj2.foo2(); // 输出啥？
 * `foo2()`：实际上是 `window.foo2()`，指向 `window`，输出 `2`
 * `obj2.foo2()`：`obj2` 调用 `foo2()`，指向 `obj2`，输出 `3`
 
-### 隐式绑定丢失问题
+### 7.5. 隐式绑定丢失问题
 
-#### 求输出结果
+#### 7.5.1. 求输出结果
 
 ```js
 function foo() {
@@ -865,7 +865,7 @@ doFoo(obj.foo); // 输出啥？
 
 > 注意此时调用的时候，查找的 `fn` 是 `window` 上的 `fn`，而不是 `doFoo` 里的，`doFoo` 并没有设置 `fn` 这个方法。
 
-#### 求输出结果
+#### 7.5.2. 求输出结果
 
 ```js
 function foo() {
@@ -909,9 +909,9 @@ var obj2 = { a: 3, doFoo };
 obj2.doFoo(obj.foo);
 ```
 
-### 显示绑定问题
+### 7.6. 显示绑定问题
 
-#### 求输出结果
+#### 7.6.1. 求输出结果
 
 ```js
 function foo() {
@@ -944,7 +944,7 @@ Uncaught TypeError: Cannot read property 'call' of undefined
 * `foo.call(obj)`：将 `foo` 的 `this` 指向了 `obj`
 * `foo().call(obj)`：先执行 `foo()`，输出 `2`，然后它是无返回的，相当于 `undefined.call(obj)`，直接报错
 
-#### 求输出结果
+#### 7.6.2. 求输出结果
 
 ```js
 function foo() {
@@ -978,7 +978,7 @@ foo().call(obj); // 输出啥？
 
 最后一个 `return function { this.a }`，所以变成这个方法来 `call(obj)`，因此输出 `obj` 中的 `a`，也就是 `1`。 
 
-### 求输出结果
+### 7.7. 求输出结果
 
 ```js
 function Foo() {
@@ -1002,7 +1002,7 @@ Foo();
 
 解析：如果没有 `use strict`，那么选 A；如果是严格模式，那就是 D，严格模式下禁止 `this` 关键字指向全局对象。
 
-### 阐述题
+### 7.8. 阐述题
 
 ```js
 let userInfo = {
@@ -1037,7 +1037,7 @@ userInfo.updateInfo();
 
 答案：`setTimeout(() => {})` 即可。
 
-## 参考文献
+## 8. 参考文献
 
 * [ ] [再来40道this面试题酸爽继续](https://juejin.im/post/6844904083707396109)【阅读建议：1h】
 * [ ] [this,this,再次讨论javascript中的this,超全面](https://www.cnblogs.com/painsOnline/p/5102359.html)【阅读建议：10min】
