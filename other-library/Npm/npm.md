@@ -312,6 +312,25 @@ The solution I followed to solve this problem:
 5. Save all (if asked, save as administrator)
 6. Good to go!
 
+# 如何将 Node 和 NPM 更新到最新版本
+
+node.js
+
+```
+npm install -g n
+n lts
+n latest
+n prune
+
+// npm
+npm install -g npm@latest
+
+```
+
+# npm 更新依赖包
+
+https://juejin.cn/post/6913833065647341581
+
 # 2. 参考
 
 1. [message-npm-warn-config-global-global-local-are-deprecated-use-loc](https://stackoverflow.com/questions/72401421/message-npm-warn-config-global-global-local-are-deprecated-use-loc)
