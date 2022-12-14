@@ -2,7 +2,7 @@
 
 > Author: tinfengyee
 > Date: 2022-11-13 11:31:37
-> LastEditTime: 2022-11-13 11:31:55
+> LastEditTime: 2022-12-14 01:03:16
 > Description: NO Desc
 
 ## Vue系统
@@ -10,6 +10,8 @@
 - [ ] [learnVue-Vue.js源码分析](https://github.com/answershuto/learnVue)
 - [ ] [剖析 Vue.js 内部运行机制](https://www.kancloud.cn/sllyli/vuejs)
 - [ ] [Vue.js 技术揭秘](https://ustbhuangyi.github.io/vue-analysis/)
+- [ ] [沐华-有几篇文章可以看看](https://juejin.cn/user/3368559359825448/posts)
+- [x] [ 花帽子的博客-Vue源码解析](https://jonny-wei.github.io/blog/)【推荐】
 
 ## 其他
 
