@@ -5,6 +5,10 @@
 > LastEditTime: 2022-12-17 00:54:15
 > Description: NO Desc
 
+https://v2.cn.vuejs.org/v2/guide/
+
+https://cn.vuejs.org/guide/introduction.html
+
 ## 试题
 
 - [ ] [web前端面试 - Vue - 面试官系列](https://vue3js.cn/interview/)
