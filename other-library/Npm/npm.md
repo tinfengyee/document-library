@@ -2,7 +2,7 @@
 
 > Author: tinfengyee
 > Date: 2022-07-12 23:55:06
-> LastEditTime: 2022-07-30 00:28:40
+> LastEditTime: 2022-12-29 10:31:15
 > Description: 
 
 # CLI CMD
@@ -330,6 +330,33 @@ npm install -g npm@latest
 # npm 更新依赖包
 
 https://juejin.cn/post/6913833065647341581
+
+# NPM 换源
+
+淘宝镜像
+
+http://npmmirror.com/
+
+```
+npm install -g cnpm --registry=https://registry.npmmirror.com
+```
+
+安装换源工具
+
+这里我用cgr , 或者 nrm , yrm
+https://github.com/daysai/cgr
+
+```
+cnpm install -g cgr
+cgr use taobao [n/y]
+```
+
+安装 yarn
+
+```
+npm install --global yarn
+
+```
 
 # 2. 参考
 

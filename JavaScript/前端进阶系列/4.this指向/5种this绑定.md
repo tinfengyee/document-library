@@ -11,8 +11,8 @@
 
 再牢记 2 句话：
 
-- 普通函数中 this 的指向，是 this 执行时的上下文（默认）
-- 箭头函数中 this 的指向，是 this 定义时的上下文
+- **普通函数中 this 的指向，是 this 执行时的上下文（默认）**
+- **箭头函数中 this 的指向，是 this 定义时的上下文**
 
 作用域链和 this 是两套不同的系统，它们之间基本没太多联系。
 
@@ -57,7 +57,7 @@ var a = 2;
 })();
 ```
 
-## 隐式绑定
+## 隐式绑定（通过对象调用）
 
 当函数引用有**上下文对象**时，隐式绑定规则会把函数中的this绑定到这个上下文对象。对象属性引用链中只有上一层或者说最后一层在调用中起作用。
 
@@ -616,8 +616,8 @@ var personB = new Person('personB')
 personA.show1()
 personA.show1.call(personB)
 
-personA.show2()
-personA.show2.call(personB)
+personA.show2() // 注意
+personA.show2.call(personB) // 注意
 
 personA.show3()()
 personA.show3().call(personB)

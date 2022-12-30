@@ -23,7 +23,7 @@ window.addEventListener('resize', onResizeHandler);
 
 而节流和防抖一个很经典的应用场景就是去控制我们的事件的触发，节省浏览器开销。
 
-# 2. 什么是防抖
+# 2. 什么是防抖(resize,input)
 
 >  个人理解 函数防抖就是法师发技能的时候要读条，技能读条没完再按技能就会重新读条。
 
@@ -177,7 +177,7 @@ function onChange(e) {    validate(e.target.value); }
 
 ![img](https://tinf-pic.oss-cn-guangzhou.aliyuncs.com/img/2022/08/20220825023156.jpeg)
 
-## 3.1. throttle 实现
+## 3.1. throttle 实现(scroll，懒加载图片)
 
 ### 3.1.1. 使用定时器
 
@@ -562,3 +562,5 @@ var helpers = {
 - [ ] [Js中的防抖与节流](https://hateonion.me/posts/19jan02/)
 - [ ] [浅出篇 7 个角度吃透 Lodash 防抖节流原理](https://muyiy.cn/blog/7/7.5.html#%E5%BC%95%E8%A8%80)
 - [ ] [函数防抖(debounce)和节流(throttle)以及lodash的debounce源码赏析](https://segmentfault.com/a/1190000017227559)
+
+- [x] [Web性能优化-防抖与节流](https://juejin.cn/post/6934182172694118414)
