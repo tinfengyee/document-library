@@ -244,7 +244,7 @@ b. 批量上报
 
 - [x] [一篇讲透自研的前端错误监控](https://juejin.cn/post/6987681953424080926)
 - [x] [如何优雅处理前端异常？](http://jartto.wang/2018/11/20/js-exception-handling/index.html)
-- [ ] [前端代码异常监控实战](https://github.com/happylindz/blog/issues/5)
+- [x] [前端代码异常监控实战](https://github.com/happylindz/blog/issues/5)
 - [ ] [脚本错误量极致优化-让脚本错误一目了然](https://github.com/joeyguo/blog/issues/14)
 
 - [ ] [前端错误监控](https://bengbu-yuezhang.github.io/2020/05/16/%E5%89%8D%E7%AB%AF%E9%94%99%E8%AF%AF%E7%9B%91%E6%8E%A7/)

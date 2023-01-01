@@ -42,11 +42,11 @@ app.listen(8000, '0.0.0.0', () => {
 
 在 `koa` 中，中间件被 `next()` 方法分成了两部分。`next()` 方法上面部分会先执行，下面部门会在后续中间件执行全部结束之后再执行。可以通过下图直观看出：
 
-![img](./Koa.assets/461dbf9917634fe1a1b578237ad78600tplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp)
+![img](./koa.assets/461dbf9917634fe1a1b578237ad78600tplv-k3u1fbpfcp-zoom-in-crop-mark4536000-1672371479162-9.webp)
 
 在洋葱模型中，每一层相当于一个中间件，用来处理特定的功能，比如错误处理、`Session` 处理等等。其处理顺序先是 `next()` 前请求（`Request`，从外层到内层）然后执行 `next()` 函数，最后是 `next()` 后响应（`Response`，从内层到外层），也就是说**每一个中间件都有两次处理时机**。
 
-![img](./Koa.assets/65c691fe2b7842ed831b6069af4f463dtplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp)
+![img](./koa.assets/65c691fe2b7842ed831b6069af4f463dtplv-k3u1fbpfcp-zoom-in-crop-mark4536000-1672371479162-10.webp)
 
 ## 为什么 Koa 使用洋葱模型
 
@@ -70,7 +70,7 @@ app.use(async(ctx, next) => {
 复制代码
 ```
 
-![img](./Koa.assets/9f4a4d62b44d4cdb9864745bf58af842tplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp)
+![img](./koa.assets/9f4a4d62b44d4cdb9864745bf58af842tplv-k3u1fbpfcp-zoom-in-crop-mark4536000-1672371479163-11.webp)
 
 而假如没有洋葱模型，这是做不到的。
 
@@ -214,7 +214,7 @@ if (!fn) return Promise.resolve()
 
 其过程如下所示：
 
-![img](./Koa.assets/85ec89edd9cf46f889fbe3d4597fa32atplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp)
+![img](./koa.assets/85ec89edd9cf46f889fbe3d4597fa32atplv-k3u1fbpfcp-zoom-in-crop-mark4536000-1672371479163-12.webp)
 
 ## 简易版 compose
 

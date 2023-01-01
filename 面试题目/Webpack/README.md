@@ -10,6 +10,8 @@
 
 [关于 webpack 的面试题有哪些？](https://www.zhihu.com/question/266788138)
 
+[webpack4打包vue前端多页面项目](https://juejin.cn/post/6844903679607177229)
+
 Webpack是目前比较物流的前端构建工具，它基于入口，用不同的Loader来处理不同的文件。我们来看一下常见的Webpack面试题及答案吧，希望对你有帮助。
 
 ## **一、webpack了解吗，讲一讲原理，怎么压缩代码？**
