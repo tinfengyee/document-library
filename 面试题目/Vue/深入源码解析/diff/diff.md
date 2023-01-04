@@ -246,6 +246,12 @@ Diff 算法，在 Vue 里面就是叫做 `patch` ，它的核心就是参考 [Sn
 
 ### 4.4. 什么时候触发 patch ？
 
+> 首先响应式数据更新后，触发了 `渲染 Watcher` 的回调函数 `vm._update(vm._render())`去驱动视图更新，
+>
+> `vm._render()` 其实生成的就是 `vnode`，而 `vm._update` 就会带着新的 `vnode` 去走触发 `__patch__` 过程。
+>
+> 我们直接进入 `ul` 这个 `vnode` 的 `patch` 过程。
+
 - 在页面**首次渲染**的时候会调用一次 `patch` 并创建新的 `vnode`，不会进行更深层次的比较。
 
 - 在组件中数据发生变化时：
@@ -407,7 +413,9 @@ return function patch (oldVnode, vnode, hydrating, removeOnly) {
 
 **这个是用来判断是不是同一节点的函数**
 
-这个函数不长，直接看源码吧
+这个函数不长，直接看源码吧.
+
+判断 `sameNode` 的时候，只会判断`key`、 `tag`、`是否有data的存在（不关心内部具体的值）`、`是否是注释节点`、`是否是相同的input type`
 
 ```js
 function sameVnode (a, b) {

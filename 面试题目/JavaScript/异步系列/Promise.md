@@ -1423,8 +1423,6 @@ mergePromise([ajax1, ajax2, ajax3]).then(data => {
 
 ### 13.6. 封装一个异步加载图片的方法
 
-> ](#chapter-one)
-
 ```js
 function loadImg(url) {
   // ...实现代码
