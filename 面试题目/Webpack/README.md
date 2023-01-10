@@ -206,3 +206,9 @@ https://juejin.cn/post/7130269957979865102
 实践经验，比如code spliting, build
 
 如何提高构建/编译速度，并解答每个方案的原理
+
+## 试题
+
+https://blog.csdn.net/qq_41581588/article/details/124744204
+
+https://blog.csdn.net/m0_73460278/article/details/126664683
