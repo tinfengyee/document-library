@@ -9,6 +9,22 @@ wsl -help
 - [Microsoft WSL 帮助](https://docs.microsoft.com/zh-cn/windows/wsl/)
 - [Microsoft Terminal 帮助](https://docs.microsoft.com/zh-CN/windows/terminal/)
 
+# 安装 WSL
+
+[安装步骤](https://learn.microsoft.com/zh-cn/windows/wsl/install-manual)
+
+```
+wsl --install
+
+默认情况下，安装的 Linux 分发版为 Ubuntu。 可以使用 -d 标志进行更改。
+
+若要更改安装的发行版，请输入：wsl --install -d <Distribution Name>。 将 <Distribution Name> 替换为要安装的发行版的名称。
+若要查看可通过在线商店下载的可用 Linux 发行版列表，请输入：wsl --list --online 或 wsl -l -o。
+若要在初始安装后安装其他 Linux 发行版，还可使用命令：wsl --install -d <Distribution Name>
+```
+
+
+
 # 2. 配置
 
 ## 2.1. 修改root的密码
@@ -180,6 +196,22 @@ source .bashrc
 再次打开Ubuntu就直接进入家目录了
 
 Windows Terminal的一个使用技能：选中文本右键单击一次是复制，再单击一次是粘贴
+
+# 安装编程软件 redis,jdk
+
+## docker wsl2
+
+https://docs.docker.com/desktop/windows/wsl/
+
+## [Windows远程连接Redis（Linux）](https://juejin.cn/post/7174558006682583077)
+
+https://redis.io/docs/getting-started/installation/
+
+[win11的WSL安装以及linux各种环境配置](https://blog.csdn.net/hataksumo/article/details/127973297)
+
+```vim
+ps -ef|grep redis
+```
 
 # 4. 参考
 
